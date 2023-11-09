@@ -1,10 +1,15 @@
-// FS is the File System module to save JSON data in node.js
+// FS is the File System module, we will use it to save JSON data in node.js
 const fs = require('fs');
 
+// Importing objects from other files
+const enemies = require('./enemies');
+
+//Random log for start-up
 console.log("__// Operation Jason initialized...\n");
+
 // Creating our desired object(s)
 const player = {
-  name: "DiogoAndreMatosPT",
+  name: "Champion",
   level: 1,
   isAdmin: true,
 };
@@ -30,6 +35,5 @@ fs.readFile('data.json', 'utf-8', (err, data) => {
   console.log(jsonDump);
 });
 
-
-
-
+// Export objects to be used outside of this file
+module.exports = player;
